@@ -1,0 +1,58 @@
+:host {
+  display: block;
+}
+
+.tags {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+.search-input {
+  border: none;
+  border-radius: 14px;
+  padding: 1rem;
+  width: 100%;
+  font: inherit;
+  background-color: white;
+}
+
+.shell-header {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tag {
+  white-space: nowrap;
+}
+
+.tag-button {
+  border: none;
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border-radius: 14px;
+}
+
+.clear-button {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  margin-right: 0.5rem;
+}
+
+.search-container {
+  position: relative;
+}
+
+.actions-container {
+  display: flex;
+  justify-content: flex-end;
+}

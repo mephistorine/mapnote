@@ -1,0 +1,40 @@
+<header class="shell-header">
+  <div class="actions-container">
+    <button class="button is-primary is-small" (click)="onClickAddButton()">Добавить</button>
+  </div>
+
+  <div class="search-container">
+    <input type="text"
+           placeholder="Поиск..."
+           class="search-input"
+           [formControl]="searchFormControl">
+
+    <button class="clear-button" (click)="onClickClearButton()">
+      <mn-icon class="icon-image" iconName="close" aria-hidden="true"></mn-icon>
+    </button>
+  </div>
+
+  <div class="tags-container">
+    <ul class="tags">
+      <li class="tag">
+        <button class="tag-button">Паб</button>
+      </li>
+
+      <li class="tag">
+        <button class="tag-button">Бар</button>
+      </li>
+
+      <li class="tag">
+        <button class="tag-button">Гастропаб</button>
+      </li>
+
+      <li class="tag">
+        <button class="tag-button">Ресторан</button>
+      </li>
+
+      <li class="tag">
+        <button class="tag-button">Тайская кухня</button>
+      </li>
+    </ul>
+  </div>
+</header>
