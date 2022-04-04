@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from "@angular/core"
 export class IconComponent implements OnInit {
 
   @Input()
-  public iconName: "close" | "star" | null = null
+  public iconName: "close" | "star" | "arrow-down" | null = null
 
   constructor() {
   }
