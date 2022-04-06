@@ -1,0 +1,7 @@
+<div class="stars-container">
+  <button class="star-button"
+          *ngFor="let isSelected of stars"
+          [class.is-selected]="isSelected">
+    <mn-icon iconName="star" class="star-icon"></mn-icon>
+  </button>
+</div>
