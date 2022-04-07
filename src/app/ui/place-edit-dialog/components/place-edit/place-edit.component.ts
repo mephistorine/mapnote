@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core"
-import { FormControl, Validators } from "@angular/forms"
+import { FormControl, FormGroup, Validators } from "@angular/forms"
 
 @Component({
   selector: "mn-place-edit",
@@ -7,11 +7,16 @@ import { FormControl, Validators } from "@angular/forms"
   styleUrls: [ "./place-edit.component.scss" ]
 })
 export class PlaceEditComponent implements OnInit {
-
-  public rating: FormControl = new FormControl(0, Validators.min(1))
+  public form: FormGroup = new FormGroup({
+    name: new FormControl(),
+    rating: new FormControl(0, Validators.min(1)),
+    description: new FormControl(),
+    tags: new FormControl([ "Паб", "Бар", "Гастропаб", "Ресторан" ]),
+    photos: new FormControl()
+  })
 
   constructor() {
-    console.log(this.rating)
+    console.log(this.form.get('rating'))
   }
 
   ngOnInit(): void {

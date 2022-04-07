@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+.tags {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+.tag {
+  white-space: nowrap;
+}
+
+.tag-button {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 14px;
+  background-color: hsl(0deg 0% 95%);
+}

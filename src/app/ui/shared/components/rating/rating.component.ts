@@ -44,7 +44,7 @@ export class RatingComponent implements OnInit, ControlValueAccessor {
     // this.isDis = isDisabled
   }
 
-  public writeValue(ratingCount: number): void {
+  public writeValue(ratingCount: number) {
     const newStars: boolean[] = new Array(this.stars.length).fill(false)
 
     for (let i = 0; i < ratingCount; i++) {
