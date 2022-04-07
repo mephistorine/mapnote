@@ -4,8 +4,6 @@ import { ReactiveFormsModule } from "@angular/forms"
 import { RatingModule } from "../shared/components/rating/rating.module"
 import { PlaceEditComponent } from './components/place-edit/place-edit.component';
 
-
-
 @NgModule({
   declarations: [
     PlaceEditComponent

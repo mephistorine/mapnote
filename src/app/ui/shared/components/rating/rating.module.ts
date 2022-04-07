@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { IconModule } from "../icon/icon.module"
 import { RatingComponent } from './rating.component';
 
-
-
 @NgModule({
   declarations: [
     RatingComponent
