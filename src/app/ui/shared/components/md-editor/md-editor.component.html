@@ -2,11 +2,13 @@
   <div class="tabs-container">
     <button class="button tab-button"
             [class.is-active]="selectedTabName === 'RAW'"
-            (click)="onClickTabButton('RAW')">Контент</button>
+            (click)="onClickTabButton('RAW')"
+            [disabled]="isDisabled">Контент</button>
 
     <button class="button tab-button"
             [class.is-active]="selectedTabName === 'RESULT'"
-            (click)="onClickTabButton('RESULT')">Результат</button>
+            (click)="onClickTabButton('RESULT')"
+            [disabled]="isDisabled">Результат</button>
   </div>
 
   <textarea *ngIf="selectedTabName === 'RAW'"
