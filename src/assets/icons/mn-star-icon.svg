@@ -1,9 +1,20 @@
 <svg
-  id="mn-star-icon"
-  width="32"
-  height="30"
-  viewBox="0 0 32 30"
+  xmlns="http://www.w3.org/2000/svg"
+  width="100%"
+  height="100%"
   fill="currentColor"
-  xmlns="http://www.w3.org/2000/svg">
-  <path d="M25.9051 30L16.0007 22.9016L6.09625 30L9.89911 18.5363L0 11.4831H12.2217L16.0007 0L19.7796 11.4831H32L22.1022 18.5363L25.9051 30Z"/>
+>
+  <g id="mn-star-icon">
+    <svg x="50%"
+         y="50%"
+         width="100%"
+         height="100%"
+         overflow="visible"
+         viewBox="0 0 32 30"
+         fill="none">
+      <svg x="-16" y="-15">
+        <path fill="currentColor" d="M25.9051 30L16.0007 22.9016L6.09625 30L9.89911 18.5363L0 11.4831H12.2217L16.0007 0L19.7796 11.4831H32L22.1022 18.5363L25.9051 30Z"/>
+      </svg>
+    </svg>
+  </g>
 </svg>

@@ -1,0 +1,31 @@
+<div class="form-container" [formGroup]="form">
+  <div class="field">
+    <label for="name">Название</label>
+    <input id="name" name="name" type="text" class="input">
+  </div>
+
+  <div class="field">
+    <label>Рейтинг</label>
+    <mn-rating formControlName="rating"></mn-rating>
+  </div>
+
+  <div class="field">
+    <label>Описание</label>
+    <p>description</p>
+  </div>
+
+  <div class="field">
+    <label>Метки</label>
+    <mn-tags formControlName="tags"></mn-tags>
+  </div>
+
+  <div class="field">
+    <label>Фотографии</label>
+    <p>photos</p>
+  </div>
+</div>
+
+<div class="actions-container">
+  <button class="button is-primary submit-button">Сохранить</button>
+  <button class="button is-secondary cancel-button">Отменить</button>
+</div>
