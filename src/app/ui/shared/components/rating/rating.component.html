@@ -2,7 +2,8 @@
   <button class="star-button"
           *ngFor="let isSelected of stars; index as index"
           [class.is-selected]="isSelected"
-          (click)="onClickStar(index)">
+          (click)="onClickStar(index)"
+          [disabled]="isDisabled">
     <mn-icon iconName="star" class="star-icon"></mn-icon>
   </button>
 </div>
