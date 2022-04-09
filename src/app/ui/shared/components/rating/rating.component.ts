@@ -1,25 +1,26 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from "@angular/core"
-import { ControlValueAccessor } from "@angular/forms"
-import { createValueAccessor } from "../../../../lib"
+import { Component, forwardRef, Input, OnInit } from "@angular/core"
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms"
 
 @Component({
   selector: "mn-rating",
   templateUrl: "./rating.component.html",
   styleUrls: [ "./rating.component.scss" ],
-  providers: [ createValueAccessor(() => RatingComponent) ]
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => RatingComponent),
+      multi: true
+    }
+  ]
 })
 export class RatingComponent implements OnInit, ControlValueAccessor {
-  public stars: boolean[] = new Array(5).fill(false)
-
-  @Input()
-  public set starCount(value: number) {
-    this.stars = new Array(value).fill(false)
-  }
+  public stars: boolean[] = [ false, false, false, false, false ]
+  isDis = false
 
   @Input()
   public readonly: boolean = false
 
-  constructor(private changeDetection: ChangeDetectorRef) {
+  constructor() {
   }
 
   public ngOnInit(): void {
@@ -40,9 +41,10 @@ export class RatingComponent implements OnInit, ControlValueAccessor {
   }
 
   public setDisabledState(isDisabled: boolean): void {
+    // this.isDis = isDisabled
   }
 
-  public writeValue(ratingCount: number): void {
+  public writeValue(ratingCount: number) {
     const newStars: boolean[] = new Array(this.stars.length).fill(false)
 
     for (let i = 0; i < ratingCount; i++) {
@@ -50,6 +52,21 @@ export class RatingComponent implements OnInit, ControlValueAccessor {
     }
 
     this.stars = newStars
-    this.changeDetection.detectChanges()
+  }
+
+  public onClickStar(index: number): void {
+    const newStars: boolean[] = new Array(this.stars.length).fill(false)
+
+    for (let i = 0; i < newStars.length; i++) {
+      newStars[ i ] = true
+
+      if (i === index) {
+        break
+      }
+    }
+
+    this.stars = newStars
+    this.updateFormControlTouchState()
+    this.updateFormControlValue(this.stars.filter(isSelected => isSelected).length)
   }
 }
