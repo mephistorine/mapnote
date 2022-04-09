@@ -16,10 +16,8 @@ export class PlaceEditComponent implements OnInit {
   })
 
   constructor() {
-    console.log(this.form.get('rating'))
   }
 
   ngOnInit(): void {
   }
-
 }
