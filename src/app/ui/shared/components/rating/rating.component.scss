@@ -7,11 +7,17 @@
   background: none;
   padding: 0;
   margin: 0;
+  color: #D3D3D3;
+}
+
+.star-button.is-selected[disabled] {
+  color: hsl(60, 0%, 46%);
 }
 
 .star-button .icon-image {
   width: 2.5rem;
   height: 2.5rem;
+
 }
 
 .stars-container {

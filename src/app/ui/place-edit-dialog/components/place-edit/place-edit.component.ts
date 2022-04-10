@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core"
 import { FormControl, FormGroup, Validators } from "@angular/forms"
+import {RatingComponent} from "../../../shared/components/rating/rating.component";
 
 @Component({
   selector: "mn-place-edit",
@@ -19,5 +20,9 @@ export class PlaceEditComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  ratingDisable() {
+    this.form.get('rating').disable()
   }
 }
