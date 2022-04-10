@@ -4,6 +4,7 @@ import { BrowserModule } from "@angular/platform-browser"
 import { AppComponent } from "./app.component"
 import { PlaceEditDialogModule } from "./ui/place-edit-dialog/place-edit-dialog.module"
 import { ShellModule } from "./ui/shell/shell.module"
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -12,10 +13,12 @@ import { ShellModule } from "./ui/shell/shell.module"
   imports: [
     BrowserModule,
     ShellModule,
-    PlaceEditDialogModule
+    PlaceEditDialogModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [ AppComponent ]
+
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }
