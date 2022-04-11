@@ -13,7 +13,10 @@
 
   <textarea *ngIf="selectedTabName === 'RAW'"
             class="field-input input" id="description"
-            [(ngModel)]="editorValue"></textarea>
+            (focus)="onTouch()"
+
+            [ngModel]="editorValue"
+            (ngModelChange)="onChangeEditorValue($event)"></textarea>
 
   <div *ngIf="selectedTabName === 'RESULT'"
        class="result"

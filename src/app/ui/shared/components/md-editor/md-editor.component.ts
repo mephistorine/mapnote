@@ -1,6 +1,6 @@
 import { Component, forwardRef, OnInit } from "@angular/core"
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms"
-import { DomSanitizer } from "@angular/platform-browser"
+import { DomSanitizer, SafeHtml } from "@angular/platform-browser"
 import snarkdown from "snarkdown"
 
 type EditorTabName = "RAW" | "RESULT"
@@ -34,11 +34,16 @@ export class MdEditorComponent implements OnInit, ControlValueAccessor {
   public ngOnInit(): void {
   }
 
-  public onClickTabButton(tabName: EditorTabName) {
+  public onClickTabButton(tabName: EditorTabName): void {
     this.selectedTabName = tabName
   }
 
-  public convertMarkdownToHtml(markdown: string) {
+  public onChangeEditorValue(newValue: string): void {
+    this.editorValue = newValue
+    this.onChange(newValue)
+  }
+
+  public convertMarkdownToHtml(markdown: string): SafeHtml {
     return this.domSanitizer.bypassSecurityTrustHtml(snarkdown(markdown))
   }
 
