@@ -20,6 +20,7 @@ export class RatingComponent implements OnInit, ControlValueAccessor {
   public readonly: boolean = false
 
   constructor() {
+
   }
 
   public ngOnInit(): void {
@@ -40,6 +41,7 @@ export class RatingComponent implements OnInit, ControlValueAccessor {
   }
 
   public setDisabledState(isDisabled: boolean): void {
+    if (isDisabled) {this.readonly = true}
   }
 
   public writeValue(ratingCount: number) {
@@ -53,6 +55,11 @@ export class RatingComponent implements OnInit, ControlValueAccessor {
   }
 
   public onClickStar(index: number): void {
+    console.log(this.readonly)
+    if (this.readonly) {
+      return
+    }
+
     const newStars: boolean[] = new Array(this.stars.length).fill(false)
 
     for (let i = 0; i < newStars.length; i++) {
