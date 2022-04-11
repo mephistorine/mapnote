@@ -1,10 +1,10 @@
-import { Component, forwardRef, Input, OnInit } from "@angular/core"
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms"
+import {Component, forwardRef, Input, OnInit} from "@angular/core"
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms"
 
 @Component({
   selector: "mn-rating",
   templateUrl: "./rating.component.html",
-  styleUrls: [ "./rating.component.scss" ],
+  styleUrls: ["./rating.component.scss"],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -14,8 +14,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms"
   ]
 })
 export class RatingComponent implements OnInit, ControlValueAccessor {
-  public stars: boolean[] = [ false, false, false, false, false ]
-  public isDisabled: boolean = true;
+  public stars: boolean[] = [false, false, false, false, false]
 
   @Input()
   public readonly: boolean = false
@@ -47,7 +46,7 @@ export class RatingComponent implements OnInit, ControlValueAccessor {
     const newStars: boolean[] = new Array(this.stars.length).fill(false)
 
     for (let i = 0; i < ratingCount; i++) {
-      newStars[ i ] = true
+      newStars[i] = true
     }
 
     this.stars = newStars
@@ -57,7 +56,7 @@ export class RatingComponent implements OnInit, ControlValueAccessor {
     const newStars: boolean[] = new Array(this.stars.length).fill(false)
 
     for (let i = 0; i < newStars.length; i++) {
-      newStars[ i ] = true
+      newStars[i] = true
 
       if (i === index) {
         break
