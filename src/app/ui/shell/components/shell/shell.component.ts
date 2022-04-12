@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core"
 import { FormControl } from "@angular/forms"
-import { Router } from "@angular/router"
+import { MapService } from "../../../../map.service"
 
 @Component({
   selector: "mn-shell",
@@ -8,12 +8,22 @@ import { Router } from "@angular/router"
   styleUrls: [ "./shell.component.scss" ]
 })
 export class ShellComponent implements OnInit {
+  public isShowAddButton: boolean = false
   public searchFormControl: FormControl = new FormControl()
 
-  constructor() {
+  constructor(private mapService: MapService) {
   }
 
   public ngOnInit(): void {
+    this.mapService.isReady.then((map) => {
+      map.addEventListener("click", (event) => {
+        this.isShowAddButton = true
+      })
+
+      map.addEventListener("blur", () => {
+        this.isShowAddButton = false
+      })
+    })
   }
 
   public onClickClearButton(): void {
@@ -21,6 +31,5 @@ export class ShellComponent implements OnInit {
   }
 
   public onClickAddButton(): void {
-    // this.router.navigateByUrl("/create")
   }
 }

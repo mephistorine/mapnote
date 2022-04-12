@@ -1,6 +1,6 @@
 <header class="shell-header">
   <div class="actions-container">
-    <button class="button is-primary is-small" (click)="onClickAddButton()">Добавить</button>
+    <button *ngIf="isShowAddButton" class="button is-primary is-small" (click)="onClickAddButton()">Добавить</button>
   </div>
 
   <div class="search-container">

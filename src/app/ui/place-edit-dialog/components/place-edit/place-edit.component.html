@@ -21,11 +21,12 @@
 
   <div class="field">
     <label>Фотографии</label>
-    <p>photos</p>
+    <mn-photos-uploader></mn-photos-uploader>
+    <mn-photos-uploader></mn-photos-uploader>
   </div>
 </div>
 
 <div class="actions-container">
   <button class="button is-primary submit-button">Сохранить</button>
-  <button class="button is-secondary cancel-button">Отменить</button>
+  <button class="button is-secondary cancel-button" (click)="onClickCancelButton()">Отменить</button>
 </div>
