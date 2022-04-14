@@ -3,6 +3,7 @@
 }
 
 .star-button {
+  color: hsla(0, 0%, 83%, 1);
   border: 0;
   background: none;
   padding: 0;
@@ -15,5 +16,9 @@
 }
 
 .star-button.is-selected {
-  color: hsl(45deg 100% 51%);
+  color: hsla(48, 100%, 50%, 1);
+
+}
+.star-button[disabled]{
+  color: hsla(48, 0%, 46%, 1);
 }
