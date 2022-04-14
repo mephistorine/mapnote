@@ -13,7 +13,7 @@ export class PlaceEditComponent implements OnInit {
     rating: new FormControl(0, Validators.min(1)),
     description: new FormControl('# Заголовок 1 \n\n## Заголовок 2'),
     tags: new FormControl([ "Паб", "Бар", "Гастропаб", "Ресторан" ]),
-    photos: new FormControl()
+    photos: new FormControl([])
   })
 
   constructor(private dialogService: DialogService) {

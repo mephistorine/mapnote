@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IconModule } from "../icon/icon.module"
 import { PhotosUploaderComponent } from './photos-uploader.component';
 
 
@@ -12,7 +13,8 @@ import { PhotosUploaderComponent } from './photos-uploader.component';
     PhotosUploaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    IconModule
   ]
 })
 export class PhotosUploaderModule { }
