@@ -1,3 +1,4 @@
+import { HttpClientModule } from "@angular/common/http"
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from "@angular/forms"
@@ -20,7 +21,8 @@ import { PlaceEditComponent } from './components/place-edit/place-edit.component
     ReactiveFormsModule,
     TagsModule,
     MdEditorModule,
-    PhotosUploaderModule
+    PhotosUploaderModule,
+    HttpClientModule
   ]
 })
 export class PlaceEditDialogModule { }

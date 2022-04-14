@@ -60,6 +60,10 @@ export class MdEditorComponent implements OnInit, ControlValueAccessor {
   }
 
   public writeValue(markdown: string): void {
+    if (markdown === null) {
+      return
+    }
+
     this.editorValue = markdown
   }
 }
