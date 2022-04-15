@@ -1,0 +1,43 @@
+:host {
+  display: block;
+}
+
+.tabs-container {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.tab-button {
+  padding: 0.5rem 1rem;
+  border-radius: 7px 7px 0 0;
+}
+
+.tab-button.is-active {
+  background-color: hsl(0, 0%, 95%);
+}
+
+.md-editor .input {
+  border-radius: 0 0 14px 14px;
+  font-family: monospace;
+}
+
+.md-editor textarea {
+  resize: vertical;
+  min-height: 200px;
+  max-height: 400px;
+}
+
+.result {
+  min-height: 200px;
+  max-height: 400px;
+  background-color: hsl(0deg 0% 95%);
+  overflow-y: auto;
+  border-radius: 0 0 14px 14px;
+  padding: 1rem;
+}
+
+.result > * {
+  max-width: 100%;
+}

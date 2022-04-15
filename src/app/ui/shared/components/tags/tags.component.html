@@ -1,5 +1,23 @@
-<ul class="tags">
+<ul class="tags" *ngIf="tags.length > 0">
   <li class="tag" *ngFor="let tag of tags">
-    <button class="tag-button">{{ tag }}</button>
+    <button class="tag-button">
+      <span>{{ tag }}</span>
+      <button class="close is-secondary"
+              [disabled]="isDisabled"
+              (click)="onClickCloseButton($event, tag)">
+        <mn-icon iconName="close"></mn-icon>
+      </button>
+    </button>
   </li>
 </ul>
+
+<input type="text"
+       class="tag-name-input"
+       placeholder="Название..."
+       [(ngModel)]="newTagNameValue"
+       [disabled]="isDisabled"
+       (keyup)="onKeyUpEnter($event)">
+
+<button class="button is-secondary add-button"
+        [disabled]="isDisabled"
+        (click)="onClickAddButton()">Добавить</button>

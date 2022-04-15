@@ -1,0 +1,21 @@
+<label [attr.for]="inputId" class="button is-secondary file-input-button">Выбрать картинки...</label>
+<input [attr.id]="inputId"
+       accept="image/gif, image/png, image/jpg, image/jpeg"
+       class="file-input"
+       type="file"
+       multiple
+       [disabled]="isDisabled"
+       (focus)="onTouch()"
+       (change)="onChangePhotosInput($event)">
+
+<div class="preview-container">
+  <ul class="preview-list">
+    <li class="preview-list-item" *ngFor="let image of images; index as index">
+      <div class="preview-img" [style.background-image]="'url(' + image + ')'"></div>
+
+      <button class="button is-secondary preview-remove-button" (click)="onClickRemoveImageButton(index)">
+        <mn-icon iconName="close"></mn-icon>
+      </button>
+    </li>
+  </ul>
+</div>
