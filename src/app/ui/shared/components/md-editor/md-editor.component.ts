@@ -1,7 +1,7 @@
-import {Component, forwardRef, OnInit} from "@angular/core"
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms"
-import {DomSanitizer, SafeHtml} from "@angular/platform-browser"
-import snarkdown from "snarkdown"
+import {Component, forwardRef, OnInit} from "@angular/core";
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
+import {DomSanitizer, SafeHtml} from "@angular/platform-browser";
+import snarkdown from "snarkdown";
 
 type EditorTabName = "RAW" | "RESULT"
 
@@ -26,9 +26,9 @@ export class MdEditorComponent implements OnInit, ControlValueAccessor {
 
   public onChange(markdownValue: string): void {}
 
-  public onTouch(): void {};
+  public onTouch(): void {}
 
-  public ngOnInit(): void {};
+  public ngOnInit(): void {}
 
   public onClickTabButton(tabName: EditorTabName): void {
     this.selectedTabName = tabName;
@@ -56,6 +56,10 @@ export class MdEditorComponent implements OnInit, ControlValueAccessor {
   }
 
   public writeValue(markdown: string): void {
+    if (markdown === null) {
+      return;
+    }
+
     this.editorValue = markdown;
   }
 }
