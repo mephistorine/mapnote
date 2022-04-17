@@ -1,7 +1,17 @@
 <div class="md-edit">
 <div class="tab-buttons">
-  <button>Контент</button>
-  <button>Результат</button>
+  <button class="tab-but"
+          [class.is-active]="selectedTabName === 'CONTENT'"
+          (click)="onClickTabButton('CONTENT')">Контент</button>
+
+  <button class="tab-but"
+          [class.is-active]="selectedTabName === 'RESULT'"
+          (click)="onClickTabButton('RESULT')">Результат</button>
 </div>
-  <textarea></textarea>
+  <textarea *ngIf="selectedTabName === 'CONTENT'"
+            class="field-input input" id="description"
+            [(ngModel)]="editorValue"></textarea>
+  <div *ngIf="selectedTabName === 'RESULT'"
+       class="result"
+       [innerHTML]="convertMarkdownToHtml(editorValue)"></div>
 </div>

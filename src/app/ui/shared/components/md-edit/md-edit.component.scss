@@ -1,3 +1,35 @@
 :host {
   display: block;
 }
+.tab-buttons{
+  list-style: none;
+  display: flex;
+}
+.tab-but {
+  padding: 0.5rem 1rem;
+  border-radius: 7px 7px 0 0;
+  border:hsla(0, 0%, 87%, 1) ;
+  background-color: hsla(0, 0%, 87%, 1);
+  width:100%;
+}
+.tab-but.is-active {
+  background-color: hsl(0, 0%, 95%,1);
+}
+.md-edit .input {
+  border-radius: 0 0 14px 14px;
+  font-family: monospace;
+}
+
+.md-edit textarea {
+  resize: vertical;
+  min-height: 200px;
+  max-height: 400px;
+}
+.result{
+  min-height: 200px;
+  max-height: 400px;
+  background-color: hsl(0deg 0% 95%);
+  overflow-y: auto;
+  border-radius: 0 0 14px 14px;
+  padding: 1rem;
+}
