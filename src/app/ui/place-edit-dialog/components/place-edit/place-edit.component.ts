@@ -16,7 +16,7 @@ export class PlaceEditComponent implements OnInit {
   })
 
   constructor() {
-    
+
   }
 
   ngOnInit(): void {
