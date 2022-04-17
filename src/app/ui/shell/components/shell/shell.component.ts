@@ -1,8 +1,6 @@
 import { Component, OnInit } from "@angular/core"
 import { FormControl } from "@angular/forms"
-import { LeafletMouseEvent } from "leaflet"
-import { DialogService } from "../../../../dialog.service"
-import { MapService } from "../../../../map.service"
+import { Router } from "@angular/router"
 
 @Component({
   selector: "mn-shell",
@@ -10,20 +8,12 @@ import { MapService } from "../../../../map.service"
   styleUrls: [ "./shell.component.scss" ]
 })
 export class ShellComponent implements OnInit {
-  public isShowAddButton: boolean = false
   public searchFormControl: FormControl = new FormControl()
 
-  constructor(private mapService: MapService,
-              private dialogService: DialogService) {
+  constructor() {
   }
 
   public ngOnInit(): void {
-    this.mapService.isReady.then((map) => {
-      map.addEventListener("click", (event: LeafletMouseEvent) => {
-        this.isShowAddButton = true
-        this.dialogService.isCurrentEditLatLng = event.latlng
-      })
-    })
   }
 
   public onClickClearButton(): void {
@@ -31,6 +21,6 @@ export class ShellComponent implements OnInit {
   }
 
   public onClickAddButton(): void {
-    this.dialogService.isShowCreateOrEditDialog = true
+    // this.router.navigateByUrl("/create")
   }
 }

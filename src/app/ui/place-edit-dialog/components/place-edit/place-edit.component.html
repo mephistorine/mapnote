@@ -1,7 +1,7 @@
 <div class="form-container" [formGroup]="form">
   <div class="field">
     <label for="name">Название</label>
-    <input formControlName="name" id="name" name="name" type="text" class="input">
+    <input id="name" name="name" type="text" class="input">
   </div>
 
   <div class="field">
@@ -11,7 +11,7 @@
 
   <div class="field">
     <label>Описание</label>
-    <mn-md-editor formControlName="description"></mn-md-editor>
+    <p>description</p>
   </div>
 
   <div class="field">
@@ -21,13 +21,11 @@
 
   <div class="field">
     <label>Фотографии</label>
-    <mn-photos-uploader formControlName="photos"></mn-photos-uploader>
+    <p>photos</p>
   </div>
 </div>
 
 <div class="actions-container">
-  <button class="button is-primary submit-button"
-          (click)="onClickSaveButton()">Сохранить</button>
-  <button class="button is-secondary cancel-button"
-          (click)="onClickCancelButton()">Отменить</button>
+  <button class="button is-primary submit-button">Сохранить</button>
+  <button class="button is-secondary cancel-button">Отменить</button>
 </div>
