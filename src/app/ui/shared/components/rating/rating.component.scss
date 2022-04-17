@@ -7,7 +7,7 @@
   background: none;
   padding: 0;
   margin: 0;
-  color: hsl(0, 0%, 83%);
+  color: #d3d3d3;
 }
 
 .star-button .icon-image {
@@ -25,5 +25,5 @@
 }
 
 .star-button.is-selected[disabled] {
-  color: hsl(60, 0%, 46%);
+  color: #696969;
 }

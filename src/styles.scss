@@ -1,9 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-:root {
-  --primary-button-color: hsl(203, 76%, 58%);
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -34,7 +30,7 @@ button {
 }
 
 .button.is-primary {
-  background-color: var(--primary-button-color);
+  background-color: hsl(203, 76%, 58%);
   color: white;
   border-radius: 14px;
 }
