@@ -41,19 +41,18 @@ export class AppComponent implements AfterViewInit {
           }
         )
 
-  /*      const tooltip = new Popup({
-          // className: "place-marker-tooltip",
-
-        })
-          .setLatLng([ place.coordinates.latitude, place.coordinates.longitude ])
-          .setContent(place.name)*/
-
         marker.addTo(map).bindPopup(place.name, {
           autoClose: false,
           closeOnClick: false,
           closeButton: false,
-          className: "place-marker-tooltip"
+          className: "place-marker-tooltip",
+          offset: [ 0, -5 ]
         }).openPopup()
+
+        marker.addEventListener("click", () => {
+          // FIXME: Испускается два события
+          console.log(place)
+        })
       }
     })
 

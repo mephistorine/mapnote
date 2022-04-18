@@ -1,0 +1,62 @@
+:host {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-radius: 14px 14px 0 0;
+  padding: 1rem;
+  //transform: translateY(100%);
+  transition: transform 125ms ease-out;
+}
+
+:host-context(.is-open) {
+  transform: translateY(0);
+}
+
+.place-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.place-card-header-title {
+  font-size: 1.4em;
+}
+
+.place-card-header-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.place-card-header-actions .button {
+  width: 2rem;
+  height: 2rem;
+}
+
+.main-actions {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.main-actions .button {
+  padding: 1rem;
+  width: 100%;
+  border-radius: 14px;
+}
+
+button.button.double-gis-button {
+  background-color: #299400;
+  color: white;
+}
+
+button.button.yandex-taxi-button {
+  background-color: #fadd00;
+}

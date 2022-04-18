@@ -1,0 +1,22 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="100%"
+  height="100%"
+  fill="currentColor"
+  xmlns="http://www.w3.org/2000/svg">
+  <g id="mn-edit-icon">
+    <svg x="50%"
+         y="50%"
+         width="100%"
+         height="100%"
+         overflow="visible"
+         viewBox="0 0 19 19"
+         fill="none">
+      <path
+        d="m13.042 4.281 1.677 1.676-1.677-1.676Zm1.078-1.476L9.586 7.339a1.677 1.677 0 0 0-.459.856l-.419 2.097 2.097-.42c.324-.065.622-.224.856-.458l4.534-4.534a1.467 1.467 0 0 0-2.075-2.075v0Z"
+        stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M15.042 11.875v2.375a1.583 1.583 0 0 1-1.584 1.583H4.75a1.583 1.583 0 0 1-1.583-1.583V5.542A1.583 1.583 0 0 1 4.75 3.958h2.375" stroke="#000"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </g>
+</svg>
