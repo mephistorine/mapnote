@@ -24,6 +24,10 @@ export class PlaceService {
     return firstValueFrom(this.httpClient.get<Place>(`${ this.apiServerPath }/places/${ id }`))
   }
 
+  public readAll(): Promise<readonly Place[]> {
+    return firstValueFrom(this.httpClient.get<readonly Place[]>(`${ this.apiServerPath }/places`))
+  }
+
   public delete(id: number): Promise<unknown> {
     return firstValueFrom(this.httpClient.delete<Place>(`${ this.apiServerPath }/places/${ id }`))
   }

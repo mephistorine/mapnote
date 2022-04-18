@@ -2,11 +2,12 @@
 
 :root {
   --primary-button-color: hsl(203, 76%, 58%);
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: var(--font-family);
   font-size: 18px;
 }
 
@@ -67,3 +68,12 @@ button {
 }
 
 /* endregion */
+
+.place-marker-tooltip .leaflet-popup-content {
+  font-family: var(--font-family);
+  max-width: 100px;
+  padding: 0.3rem 1rem;
+  font-size: 16px;
+  border-radius: 14px;
+  margin: 0;
+}
