@@ -28,7 +28,7 @@ export class PlaceEditComponent implements OnInit {
 
   public onClickCancelButton(): void {
     this.form.reset()
-    this.dialogService.isShowCreateOrEditDialog = false
+    this.dialogService.close()
   }
 
   public onClickSaveButton(): void {

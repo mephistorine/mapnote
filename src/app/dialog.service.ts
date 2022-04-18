@@ -5,10 +5,14 @@ import { LatLng } from "leaflet"
   providedIn: "root"
 })
 export class DialogService {
-
   public isShowCreateOrEditDialog: boolean = false
   public isCurrentEditLatLng: LatLng | null = null
 
-  constructor() {
+  public open(): void {
+    this.isShowCreateOrEditDialog = true
+  }
+
+  public close(): void {
+    this.isShowCreateOrEditDialog = false
   }
 }
