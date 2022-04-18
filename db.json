@@ -29,6 +29,32 @@
         "longitude": 38.97091410588474
       },
       "id": 2
+    },
+    {
+      "name": "Hello bar",
+      "rating": 2,
+      "description": null,
+      "tags": [
+        "hello"
+      ],
+      "photos": [],
+      "coordinates": {
+        "latitude": 45.02367796901009,
+        "longitude": 38.969714906997986
+      },
+      "id": 3
+    },
+    {
+      "name": "Тес",
+      "rating": 3,
+      "description": null,
+      "tags": [],
+      "photos": [],
+      "coordinates": {
+        "latitude": 45.02391722745258,
+        "longitude": 38.97022247314454
+      },
+      "id": 4
     }
   ]
 }
