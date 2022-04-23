@@ -4,6 +4,7 @@ import { DialogService } from "./dialog.service"
 import { Place } from "./domain/place"
 import { LeafletMap } from "./lib"
 import { MapService } from "./map.service"
+import { PlaceCardControllerService } from "./place-card-controller.service"
 import { PlaceService } from "./ui/shared/api/place.service"
 
 @Component({
@@ -15,6 +16,7 @@ export class AppComponent implements AfterViewInit {
 
   constructor(private mapService: MapService,
               public readonly dialogService: DialogService,
+              private placeCardControllerService: PlaceCardControllerService,
               private placeService: PlaceService) {
   }
 
@@ -41,17 +43,20 @@ export class AppComponent implements AfterViewInit {
           }
         )
 
-        marker.addTo(map).bindPopup(place.name, {
+        const popup = new Popup({
           autoClose: false,
           closeOnClick: false,
           closeButton: false,
+          closeOnEscapeKey: false,
           className: "place-marker-tooltip",
           offset: [ 0, -5 ]
-        }).openPopup()
+        })
+
+        popup.setContent(place.name)
+        marker.addTo(map).bindPopup(popup)
 
         marker.addEventListener("click", () => {
-          // FIXME: Испускается два события
-          console.log(place)
+          this.placeCardControllerService.open(place)
         })
       }
     })

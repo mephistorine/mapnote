@@ -3,10 +3,11 @@
   "version": "2022.03.0",
   "scripts": {
     "start": "ng serve",
+    "start:open": "ng serve --host 0.0.0.0",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "start-fake-db": "json-server --watch ./db.json"
+    "start-fake-db": "json-server --watch ./db.json --host 0.0.0.0"
   },
   "private": true,
   "dependencies": {

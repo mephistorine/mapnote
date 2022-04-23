@@ -39,4 +39,6 @@
   </div>
 </header>
 
-<mn-place-card></mn-place-card>
+<mn-place-card *ngIf="placeCardController.currentOpenedPlace !== null"
+               [place]="placeCardController.currentOpenedPlace"
+               (cardClose)="onClosePlaceCard()"></mn-place-card>

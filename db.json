@@ -1,20 +1,6 @@
 {
   "places": [
     {
-      "id": 1,
-      "name": "BQ-125",
-      "rating": 5,
-      "description": "Отличный бар",
-      "tags": [
-        "Паб"
-      ],
-      "photos": [],
-      "coordinates": {
-        "latitude": 45.03956694724904,
-        "longitude": 38.978118896484375
-      }
-    },
-    {
       "name": "Какой-то бар",
       "rating": 3,
       "description": "описание",

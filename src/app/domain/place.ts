@@ -1,7 +1,7 @@
 import { Coordinates } from "./coordinates"
 
 export interface Place {
-  id: string
+  id: number
   name: string
   rating: number
   description: string
