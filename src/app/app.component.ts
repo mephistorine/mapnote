@@ -5,6 +5,7 @@ import { Place } from "./domain/place"
 import { LeafletMap } from "./lib"
 import { MapService } from "./map.service"
 import { PlaceCardControllerService } from "./place-card-controller.service"
+import { TagsFilterService } from "./tags-filter.service"
 import { PlaceService } from "./ui/shared/api/place.service"
 
 @Component({
@@ -17,7 +18,8 @@ export class AppComponent implements AfterViewInit {
   constructor(private mapService: MapService,
               public readonly dialogService: DialogService,
               private placeCardControllerService: PlaceCardControllerService,
-              private placeService: PlaceService) {
+              private placeService: PlaceService,
+              private tagsFilterService: TagsFilterService) {
   }
 
   public ngAfterViewInit(): void {
@@ -58,7 +60,15 @@ export class AppComponent implements AfterViewInit {
         marker.addEventListener("click", () => {
           this.placeCardControllerService.open(place)
         })
+
+        this.mapService.markers.set(place, marker)
+
+        for (let tag of place.tags) {
+          this.tagsFilterService.tags.add(tag)
+        }
       }
+
+      this.tagsFilterService.isInit.next()
     })
 
     this.mapService.setLeafletMap(map)
