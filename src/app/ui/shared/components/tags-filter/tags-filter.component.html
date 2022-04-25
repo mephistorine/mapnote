@@ -1,0 +1,7 @@
+<ul class="tags">
+  <li class="tag" *ngFor="let tagName of tags">
+    <button class="tag-button"
+            [class.active]="isTagActive(tagName)"
+            (click)="onClickTagButton(tagName)">{{ tagName }}</button>
+  </li>
+</ul>

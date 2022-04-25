@@ -1,0 +1,8 @@
+:host {
+  display: block;
+}
+
+.tag-button.active {
+  background-color: var(--primary-button-color);
+  color: white;
+}

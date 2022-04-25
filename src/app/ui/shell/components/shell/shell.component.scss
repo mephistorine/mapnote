@@ -31,7 +31,7 @@
   white-space: nowrap;
 }
 
-.tag-button {
+:host::ng-deep .mn-tags-filter .tag-button {
   border: none;
   padding: 0.5rem 1rem;
   background-color: white;
@@ -43,7 +43,7 @@
   border: none;
   position: absolute;
   top: 50%;
-  right: 0;
+  right: 67px;
   transform: translateY(-50%);
   margin-right: 0.5rem;
 }
@@ -55,4 +55,14 @@
 .actions-container {
   display: flex;
   justify-content: flex-end;
+}
+
+.search-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.toggle-shell-button {
+  padding: 1rem;
+  background-color: white;
 }

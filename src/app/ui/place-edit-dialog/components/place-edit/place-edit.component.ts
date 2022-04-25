@@ -11,7 +11,7 @@ import { PlaceService } from "../../../shared/api/place.service"
 })
 export class PlaceEditComponent implements OnInit {
   public form: FormGroup = new FormGroup({
-    name: new FormControl(),
+    name: new FormControl(null, Validators.required),
     rating: new FormControl(0, Validators.min(1)),
     description: new FormControl(),
     tags: new FormControl([]),

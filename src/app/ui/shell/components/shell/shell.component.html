@@ -12,30 +12,14 @@
     <button class="clear-button" (click)="onClickClearButton()">
       <mn-icon iconName="close" aria-hidden="true"></mn-icon>
     </button>
+
+    <button class="button is-secondary toggle-shell-button">🔼</button>
   </div>
 
   <div class="tags-container">
-    <ul class="tags">
-      <li class="tag">
-        <button class="tag-button">Паб</button>
-      </li>
-
-      <li class="tag">
-        <button class="tag-button">Бар</button>
-      </li>
-
-      <li class="tag">
-        <button class="tag-button">Гастропаб</button>
-      </li>
-
-      <li class="tag">
-        <button class="tag-button">Ресторан</button>
-      </li>
-
-      <li class="tag">
-        <button class="tag-button">Тайская кухня</button>
-      </li>
-    </ul>
+    <mn-tags-filter class="mn-tags-filter"
+                    [tags]="['Паб', 'Бар', 'Ресторан']"
+                    (selectedChanges)="onTagsSelectedChanges($event)"></mn-tags-filter>
   </div>
 </header>
 
