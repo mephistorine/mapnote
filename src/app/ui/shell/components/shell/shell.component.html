@@ -7,13 +7,15 @@
     <input type="text"
            placeholder="Поиск..."
            class="search-input"
+           (focus)="onFocusSearchInput()"
            [formControl]="searchFormControl">
 
     <button class="clear-button" (click)="onClickClearButton()">
       <mn-icon iconName="close" aria-hidden="true"></mn-icon>
     </button>
 
-    <button class="button is-secondary toggle-shell-button">🔼</button>
+    <button class="button is-secondary toggle-shell-button"
+            (click)="onClickToggleExpandState()">{{ isExpanded ? '🔽' : '🔼' }}</button>
   </div>
 
   <div class="tags-container">
@@ -22,6 +24,20 @@
                     (selectedChanges)="onTagsSelectedChanges($event)"></mn-tags-filter>
   </div>
 </header>
+
+<div *ngIf="isExpanded" class="content">
+  <ul class="place-list">
+    <li class="place-list-item" *ngFor="let place of places | async">
+      <h3 class="place-name">{{ place.name }}</h3>
+      <ul class="tags">
+        <li class="tag" *ngFor="let tag of place.tags">
+          <button class="tag-button">{{ tag }}</button>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
 
 <mn-place-card *ngIf="placeCardController.currentOpenedPlace !== null"
                [place]="placeCardController.currentOpenedPlace"

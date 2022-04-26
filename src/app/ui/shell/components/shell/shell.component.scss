@@ -2,6 +2,24 @@
   display: block;
 }
 
+:host-context(.is-expanded) {
+  background-color: white;
+  height: 80%;
+
+  .search-input,
+  ::ng-deep .mn-tags-filter .tag-button:not(.active),
+  .toggle-shell-button {
+    background-color: hsl(0, 0%, 95%);
+  }
+}
+
+:host::ng-deep .mn-tags-filter .tag-button {
+  border: none;
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border-radius: 14px;
+}
+
 .tags {
   margin: 0;
   padding: 0;
@@ -31,13 +49,6 @@
   white-space: nowrap;
 }
 
-:host::ng-deep .mn-tags-filter .tag-button {
-  border: none;
-  padding: 0.5rem 1rem;
-  background-color: white;
-  border-radius: 14px;
-}
-
 .clear-button {
   background: none;
   border: none;
@@ -65,4 +76,26 @@
 .toggle-shell-button {
   padding: 1rem;
   background-color: white;
+}
+
+.content {
+  padding: 1rem;
+}
+
+.place-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.place-name {
+  margin: 0.5rem 0;
+}
+
+.tags {
+  display: flex;
+}
+
+.place-list-item {
+  margin-bottom: 1.5rem;
 }
