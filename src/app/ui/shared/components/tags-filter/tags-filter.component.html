@@ -1,1 +1,7 @@
-<p>tags-filter works!</p>
+<ul class="tags">
+  <li *ngFor="let tagFilter of tags" class="tag">
+    <button class="tag-button" [class.active]="isSelectedTag(tagFilter)"
+            (click)="onClickTagFilter(tagFilter)" >{{tagFilter}}</button>
+  </li>
+
+</ul>

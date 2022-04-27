@@ -15,6 +15,6 @@
   </div>
 
   <div class="tags-container">
-    <mn-tags-filter></mn-tags-filter>
+    <mn-tags-filter [tags]="['Паб', 'Бар', 'Ресторан']" (selectedChanges)="onTagFilterChanges($event)" )></mn-tags-filter>
   </div>
 </header>

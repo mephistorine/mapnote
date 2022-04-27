@@ -45,4 +45,7 @@ export class ShellComponent implements OnInit {
     this.isShowAddButton = false
     clearTimeout(this.addButtonLifeTimerId)
   }
+  public onTagFilterChanges(tags:string[]):void{
+
+  }
 }
