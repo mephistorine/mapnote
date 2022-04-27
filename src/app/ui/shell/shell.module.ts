@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core"
 import { ReactiveFormsModule } from "@angular/forms"
 import { IconModule } from "../shared/components/icon/icon.module"
 import { ShellComponent } from "./components/shell/shell.component"
+import {TagsFilterModule} from "../shared/components/tags-filter/tags-filter.module";
 
 @NgModule({
   declarations: [
@@ -11,11 +12,12 @@ import { ShellComponent } from "./components/shell/shell.component"
   exports: [
     ShellComponent
   ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    IconModule
-  ]
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        IconModule,
+        TagsFilterModule
+    ]
 })
 export class ShellModule {
 }
